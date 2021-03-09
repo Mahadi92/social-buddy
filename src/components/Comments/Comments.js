@@ -11,7 +11,7 @@ const Comments = () => {
             .then(res => res.json())
             .then(data => setPost(data))
             .catch(err => console.log(err))
-    }, [])
+    }, [id])
     const [comments, setComments] = useState([]);
     useEffect(() => {
         const url = `https://jsonplaceholder.typicode.com/comments?postId=${id}`
@@ -19,7 +19,7 @@ const Comments = () => {
             .then(res => res.json())
             .then(data => setComments(data))
             .catch(err => console.log(err))
-    }, [])
+    }, [id])
     return (
         <div>
             <div className="card border-primary ms-3 mt-3">
